@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Chiplets & Advanced Packaging | ChipDecoded</title>
+
+  <meta name="description" content="Learn what chiplets are, how chiplet-based designs work, and how advanced semiconductor packaging connects multiple dies into one system.">
+
+  <meta name="keywords" content="chiplets, chiplet technology, semiconductor packaging, advanced packaging, 2.5D packaging, 3D packaging, chip design">
+
+  <meta name="author" content="ChipDecoded">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f7fb;
+      color: #1b263b;
+      line-height: 1.7;
+    }
+
+    header {
+      background: #0b132b;
+      color: white;
+      text-align: center;
+      padding: 18px 20px;
+    }
+
+    header h1 {
+      font-size: 28px;
+      margin-bottom: 5px;
+    }
+
+    header p {
+      font-size: 14px;
+      color: #cbd5e1;
+    }
+
+    nav {
+      background: #1c2541;
+      padding: 12px 10px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 5px 7px;
+      font-size: 14px;
+      display: inline-block;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #0b132b, #1c2541);
+      color: white;
+      text-align: center;
+      padding: 55px 20px;
+    }
+
+    .hero h2 {
+      font-size: 34px;
+      margin-bottom: 12px;
+    }
+
+    .hero p {
+      max-width: 720px;
+      margin: auto;
+      color: #dbeafe;
+      font-size: 16px;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 35px 18px;
+    }
+
+    section {
+      margin-bottom: 42px;
+    }
+
+    section h2 {
+      font-size: 26px;
+      margin-bottom: 15px;
+      color: #0b132b;
+    }
+
+    section h3 {
+      font-size: 20px;
+      margin-bottom: 9px;
+      color: #16213e;
+    }
+
+    section p {
+      font-size: 16px;
+      margin-bottom: 12px;
+    }
+
+    .intro-box {
+      background: white;
+      padding: 23px;
+      border-radius: 12px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+      margin-top: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 22px;
+      border-radius: 12px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.07);
+      border-top: 4px solid #3a506b;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+    }
+
+    .diagram {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.07);
+      margin-top: 20px;
+    }
+
+    .diagram-title {
+      text-align: center;
+      font-weight: bold;
+      margin-bottom: 18px;
+      font-size: 18px;
+    }
+
+    .chip-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .chip-box {
+      background: #0b132b;
+      color: white;
+      padding: 16px 18px;
+      border-radius: 8px;
+      text-align: center;
+      min-width: 110px;
+    }
+
+    .chip-box.small {
+      background: #3a506b;
+      min-width: 90px;
+    }
+
+    .arrow {
+      font-size: 22px;
+      font-weight: bold;
+      color: #3a506b;
+    }
+
+    .layers {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      max-width: 500px;
+      margin: 20px auto;
+    }
+
+    .layer {
+      padding: 16px;
+      text-align: center;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    .layer.top {
+      background: #0b132b;
+      color: white;
+    }
+
+    .layer.middle {
+      background: #3a506b;
+      color: white;
+    }
+
+    .layer.bottom {
+      background: #dbe3ef;
+      color: #1b263b;
+    }
+
+    .highlight {
+      background: #e8f1ff;
+      padding: 22px;
+      border-radius: 12px;
+      margin-top: 20px;
+    }
+
+    .note {
+      background: #fff7e6;
+      border-left: 5px solid #d97706;
+      padding: 18px;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+
+    .comparison {
+      overflow-x: auto;
+      margin-top: 20px;
+    }
+
+    table {
+      width: 100%;
+      min-width: 620px;
+      border-collapse: collapse;
+      background: white;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.07);
+    }
+
+    th,
+    td {
+      border: 1px solid #dbe3ef;
+      padding: 14px;
+      text-align: left;
+    }
+
+    th {
+      background: #0b132b;
+      color: white;
+    }
+
+    ul {
+      padding-left: 22px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    footer {
+      background: #0b132b;
+      color: #cbd5e1;
+      text-align: center;
+      padding: 25px 15px;
+      margin-top: 30px;
+    }
+
+    footer p {
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
+
+    @media (max-width: 650px) {
+
+      header h1 {
+        font-size: 24px;
+      }
+
+      .hero {
+        padding: 45px 16px;
+      }
+
+      .hero h2 {
+        font-size: 28px;
+      }
+
+      .container {
+        padding: 28px 15px;
+      }
+
+      section h2 {
+        font-size: 23px;
+      }
+
+      .chip-row {
+        flex-direction: column;
+      }
+
+      .arrow {
+        transform: rotate(90deg);
+      }
+
+      .chip-box {
+        width: 100%;
+        max-width: 220px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>ChipDecoded</h1>
+    <p>Understanding Chip Technology, One Concept at a Time.</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="types-of-chips.html">Types of Chips</a>
+    <a href="chip-design.html">Chip Design</a>
+    <a href="vlsi.html">VLSI</a>
+    <a href="transistors.html">Transistors</a>
+    <a href="chip-manufacturing.html">Manufacturing</a>
+    <a href="ai-chips.html">AI Chips</a>
+    <a href="chiplets-packaging.html">Chiplets</a>
+  </nav>
+
+  <section class="hero">
+    <h2>Chiplets & Advanced Packaging</h2>
+
+    <p>
+      Modern chip design can combine multiple smaller dies inside one
+      package to create powerful and flexible computing systems.
+    </p>
+  </section>
+
+  <main class="container">
+
+    <section>
+      <div class="intro-box">
+
+        <h2>What Are Chiplets?</h2>
+
+        <p>
+          A chiplet is a smaller semiconductor die designed to perform a
+          particular function as part of a larger system.
+        </p>
+
+        <p>
+          Instead of building every function on one large piece of silicon,
+          designers can divide a system into multiple chiplets and connect
+          them inside a package.
+        </p>
+
+        <p>
+          Different chiplets can be designed for different tasks, such as
+          computing, memory-related functions, input/output or specialized
+          acceleration.
+        </p>
+
+      </div>
+    </section>
+
+    <section>
+      <h2>Monolithic Chip vs Chiplet Design</h2>
+
+      <div class="comparison">
+
+        <table>
+
+          <tr>
+            <th>Feature</th>
+            <th>Monolithic Design</th>
+            <th>Chiplet-Based Design</th>
+          </tr>
+
+          <tr>
+            <td>Basic Structure</td>
+            <td>Major functions are integrated on one die</td>
+            <td>Functions can be divided among multiple dies</td>
+          </tr>
+
+          <tr>
+            <td>Design Approach</td>
+            <td>One larger integrated design</td>
+            <td>Multiple smaller building blocks</td>
+          </tr>
+
+          <tr>
+            <td>Technology Options</td>
+            <td>Major blocks generally use the same process technology</td>
+            <td>Different chiplets can potentially use different technologies</td>
+          </tr>
+
+          <tr>
+            <td>Packaging</td>
+            <td>Typically simpler package structure</td>
+            <td>Requires advanced methods to connect multiple dies</td>
+          </tr>
+
+        </table>
+
+      </div>
+    </section>
+
+    <section>
+      <h2>How a Chiplet System Works</h2>
+
+      <div class="diagram">
+
+        <div class="diagram-title">
+          Simplified Chiplet Architecture
+        </div>
+
+        <div class="chip-row">
+
+          <div class="chip-box small">
+            Compute<br>Chiplet
+          </div>
+
+          <div class="arrow">↔</div>
+
+          <div class="chip-box small">
+            I/O<br>Chiplet
+          </div>
+
+          <div class="arrow">↔</div>
+
+          <div class="chip-box small">
+            Memory<br>Interface
+          </div>
+
+        </div>
+
+        <div style="text-align:center; margin-top:18px;">
+          ↓
+        </div>
+
+        <div class="chip-row" style="margin-top:12px;">
+
+          <div class="chip-box">
+            Advanced Package
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section>
+      <h2>Why Use Chiplets?</h2>
+
+      <div class="cards">
+
+        <div class="card">
+          <h3>Modular Design</h3>
+
+          <p>
+            A complex system can be divided into smaller functional blocks.
+            This can make system architecture more modular.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Technology Flexibility</h3>
+
+          <p>
+            Different chiplets may be manufactured using different process
+            technologies when the system requires it.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Reuse</h3>
+
+          <p>
+            A well-designed chiplet may be reusable in multiple products
+            or system configurations.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Large Systems</h3>
+
+          <p>
+            Chiplet architectures can provide another approach for building
+            complex systems with many functional blocks.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <section>
+      <h2>What Is Advanced Packaging?</h2>
+
+      <div class="intro-box">
+
+        <p>
+          Semiconductor packaging is responsible for protecting the die
+          and providing electrical connections between the chip and the
+          rest of the system.
+        </p>
+
+        <p>
+          Advanced packaging uses more sophisticated ways to connect
+          multiple dies, improve signal communication, and support complex
+          system architectures.
+        </p>
+
+        <p>
+          This makes packaging an important part of modern chip design,
+          rather than simply a final protective step.
+        </p>
+
+      </div>
+    </section>
+
+    <section>
+      <h2>2D Packaging</h2>
+
+      <div class="highlight">
+
+        <p>
+          In a simplified 2D arrangement, semiconductor dies are placed
+          side by side and connected through package-level structures.
+        </p>
+
+        <div class="chip-row">
+
+          <div class="chip-box small">Die A</div>
+
+          <div class="chip-box small">Die B</div>
+
+          <div class="chip-box small">Die C</div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section>
+      <h2>2.5D Packaging</h2>
+
+      <div class="intro-box">
+
+        <p>
+          A 2.5D approach can place multiple dies on or alongside an
+          interposer or other advanced package structure that provides
+          high-density connections.
+        </p>
+
+        <div class="layers">
+
+          <div class="layer top">
+            Multiple Dies
+          </div>
+
+          <div class="layer middle">
+            Interposer / High-Density Connection Layer
+          </div>
+
+          <div class="layer bottom">
+            Package Substrate
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section>
+      <h2>3D Packaging</h2>
+
+      <div class="intro-box">
+
+        <p>
+          3D integration places semiconductor dies or functional layers
+          vertically, allowing connections between stacked components.
+        </p>
+
+        <p>
+          Vertical integration can provide high-density connections, but
+          it also introduces challenges involving heat, manufacturing,
+          testing and reliability.
+        </p>
+
+        <div class="layers">
+
+          <div class="layer top">
+            Die / Layer 3
+          </div>
+
+          <div class="layer middle">
+            Die / Layer 2
+          </div>
+
+          <div class="layer bottom">
+            Die / Layer 1
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section>
+      <h2>Chiplet Interconnects</h2>
+
+      <div class="cards">
+
+        <div class="card">
+          <h3>High-Speed Communication</h3>
+
+          <p>
+            Chiplets need reliable communication paths so that data can
+            move between different dies.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Low Latency</h3>
+
+          <p>
+            Short and efficient connections can help reduce communication
+            delays between chiplets.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Power Efficiency</h3>
+
+          <p>
+            Moving data consumes energy, so efficient interconnect design
+            is important in multi-die systems.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <section>
+      <h2>Chiplets in Modern Processors</h2>
+
+      <p>
+        A complex processor can contain multiple functional blocks that
+        communicate with one another.
+      </p>
+
+      <div class="diagram">
+
+        <div class="chip-row">
+
+          <div class="chip-box">
+            CPU<br>Chiplet
+          </div>
+
+          <div class="chip-box">
+            I/O<br>Chiplet
+          </div>
+
+          <div class="chip-box">
+            Cache / Memory<br>Functions
+          </div>
+
+        </div>
+
+        <p style="text-align:center; margin-top:20px;">
+          These components can be integrated into a larger packaged system.
+        </p>
+
+      </div>
+    </section>
+
+    <section>
+      <h2>Benefits of Chiplet Technology</h2>
+
+      <div class="cards">
+
+        <div class="card">
+          <h3>Modularity</h3>
+          <p>
+            Different functions can be separated into individual dies.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Design Reuse</h3>
+          <p>
+            Some chiplet designs may be reused across different products.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Process Flexibility</h3>
+          <p>
+            Different chiplets may be optimized for different
+            manufacturing technologies.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>System Integration</h3>
+          <p>
+            Multiple specialized functions can be combined into a single
+            packaged system.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <section>
+      <h2>Challenges of Chiplets</h2>
+
+      <div class="cards">
+
+        <div class="card">
+          <h3>Interconnect Design</h3>
+
+          <p>
+            Communication between chiplets must provide the required
+            bandwidth, latency and reliability.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Thermal Management</h3>
+
+          <p>
+            Multiple active dies can create complex thermal conditions
+            inside a package.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Testing</h3>
+
+          <p>
+            Testing multiple dies and their connections can add complexity
+            to the manufacturing process.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Package Complexity</h3>
+
+          <p>
+            Advanced multi-die systems require sophisticated packaging and
+            manufacturing techniques.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="note">
+        <strong>Important:</strong>
+        Chiplet technology does not automatically make every chip
+        smaller, cheaper or faster. The benefits depend on architecture,
+        manufacturing technology, packaging, interconnects and workload.
+      </div>
+    </section>
+
+    <section>
+      <h2>Chiplets and the Future of Chip Design</h2>
+
+      <div class="intro-box">
+
+        <p>
+          As semiconductor systems become more complex, designers are
+          exploring ways to combine different technologies and functional
+          blocks efficiently.
+        </p>
+
+        <p>
+          Chiplet-based architectures and advanced packaging provide one
+          approach to this challenge by moving some of the focus from a
+          single large die toward a system of interconnected dies.
+        </p>
+
+        <p>
+          This makes packaging, interconnect technology and system
+          architecture increasingly important parts of modern semiconductor
+          engineering.
+        </p>
+
+      </div>
+    </section>
+
+    <section>
+      <h2>Chiplets in Simple Words</h2>
+
+      <div class="highlight">
+
+        <p>
+          Think of chiplets like building blocks.
+        </p>
+
+        <p>
+          Instead of creating every function on one large chip, designers
+          can create several specialized dies and connect them inside a
+          package.
+        </p>
+
+        <p>
+          The result is a multi-die system where each chiplet can have a
+          specific role.
+        </p>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p><strong>ChipDecoded</strong></p>
+    <p>Understanding Chip Technology, One Concept at a Time.</p>
+    <p>© 2026 ChipDecoded. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
