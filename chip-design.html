@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Chip Design | ChipDecoded</title>
+
+  <meta name="description"
+        content="Learn how semiconductor chips are designed, including architecture, RTL design, verification, synthesis and physical design.">
+
+  <meta name="author" content="ChipDecoded">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.7;
+      background: #f5f7fb;
+      color: #172033;
+    }
+
+    header {
+      background: #101828;
+      color: white;
+      padding: 18px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: bold;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 15px;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .hero {
+      background: white;
+      text-align: center;
+      padding: 55px 6%;
+    }
+
+    .hero h1 {
+      font-size: 38px;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      max-width: 760px;
+      margin: auto;
+      color: #475467;
+      font-size: 17px;
+    }
+
+    .section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 45px 6%;
+    }
+
+    .section h2 {
+      font-size: 28px;
+      margin-bottom: 18px;
+    }
+
+    .section p {
+      color: #475467;
+      margin-bottom: 15px;
+    }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .step {
+      background: white;
+      padding: 22px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+    }
+
+    .number {
+      width: 42px;
+      height: 42px;
+      background: #101828;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 12px;
+      font-weight: bold;
+    }
+
+    .step h3 {
+      margin-bottom: 8px;
+    }
+
+    .step p {
+      font-size: 14px;
+      margin-bottom: 0;
+    }
+
+    .highlight {
+      background: #eef2f7;
+      padding: 22px;
+      border-left: 4px solid #101828;
+      margin-top: 25px;
+      border-radius: 5px;
+    }
+
+    .footer {
+      background: #080d17;
+      color: #b8c0cc;
+      text-align: center;
+      padding: 25px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+
+      header {
+        justify-content: center;
+        gap: 12px;
+      }
+
+      nav {
+        text-align: center;
+      }
+
+      nav a {
+        margin: 0 6px;
+      }
+
+      .hero h1 {
+        font-size: 31px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+
+  <div class="logo">ChipDecoded</div>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="types-of-chips.html">Chips</a>
+    <a href="chip-design.html">Design</a>
+    <a href="vlsi.html">VLSI</a>
+  </nav>
+
+</header>
+
+
+<main>
+
+  <section class="hero">
+
+    <h1>What Is Chip Design?</h1>
+
+    <p>
+      Chip design is the engineering process of planning,
+      developing, verifying and implementing the electronic
+      circuits that perform specific functions inside an
+      integrated circuit.
+    </p>
+
+  </section>
+
+
+  <section class="section">
+
+    <h2>Understanding Chip Design</h2>
+
+    <p>
+      A modern semiconductor chip can contain millions or even
+      billions of electronic components. Designing such a complex
+      system requires multiple engineering stages and specialized
+      tools.
+    </p>
+
+    <p>
+      Engineers begin with the required functionality and gradually
+      convert that idea into a detailed hardware implementation
+      that can eventually be manufactured on a semiconductor wafer.
+    </p>
+
+  </section>
+
+
+  <section class="section">
+
+    <h2>Basic Chip Design Flow</h2>
+
+    <p>
+      A simplified chip design process can be represented by the
+      following stages:
+    </p>
+
+
+    <div class="flow">
+
+      <div class="step">
+
+        <div class="number">1</div>
+
+        <h3>Specification</h3>
+
+        <p>
+          Engineers define what the chip needs to do,
+          including performance, power and functional requirements.
+        </p>
+
+      </div>
+
+
+      <div class="step">
+
+        <div class="number">2</div>
+
+        <h3>Architecture</h3>
+
+        <p>
+          The major functional blocks and their relationships
+          are planned at the system level.
+        </p>
+
+      </div>
+
+
+      <div class="step">
+
+        <div class="number">3</div>
+
+        <h3>RTL Design</h3>
+
+        <p>
+          Digital hardware behavior is described using
+          hardware description languages such as Verilog or VHDL.
+        </p>
+
+      </div>
+
+
+      <div class="step">
+
+        <div class="number">4</div>
+
+        <h3>Verification</h3>
+
+        <p>
+          The design is tested using simulations and other
+          verification techniques to identify functional problems.
+        </p>
+
+      </div>
+
+
+      <div class="step">
+
+        <div class="number">5</div>
+
+        <h3>Synthesis</h3>
+
+        <p>
+          RTL descriptions are converted into a gate-level
+          representation suitable for implementation.
+        </p>
+
+      </div>
+
+
+      <div class="step">
+
+        <div class="number">6</div>
+
+        <h3>Physical Design</h3>
+
+        <p>
+          The circuit is implemented physically by planning
+          placement, routing and other layout-related information.
+        </p>
+
+      </div>
+
+
+      <div class="step">
+
+        <div class="number">7</div>
+
+        <h3>Fabrication</h3>
+
+        <p>
+          The completed design is manufactured on semiconductor
+          wafers using a semiconductor fabrication process.
+        </p>
+
+      </div>
+
+
+      <div class="step">
+
+        <div class="number">8</div>
+
+        <h3>Testing</h3>
+
+        <p>
+          Manufactured
