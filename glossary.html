@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Semiconductor Glossary | ChipDecoded</title>
+
+  <meta name="description" content="A simple semiconductor and chip design glossary explaining important terms such as transistor, VLSI, wafer, lithography, ASIC, FPGA, SoC, chiplet and more.">
+
+  <meta name="keywords" content="semiconductor glossary, chip design terms, VLSI glossary, transistor, ASIC, FPGA, SoC, wafer, chiplet">
+
+  <meta name="author" content="ChipDecoded">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f7fb;
+      color: #1b263b;
+      line-height: 1.7;
+    }
+
+    header {
+      background: #0b132b;
+      color: white;
+      text-align: center;
+      padding: 18px 20px;
+    }
+
+    header h1 {
+      font-size: 28px;
+      margin-bottom: 5px;
+    }
+
+    header p {
+      font-size: 14px;
+      color: #cbd5e1;
+    }
+
+    nav {
+      background: #1c2541;
+      padding: 12px 10px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 5px 7px;
+      font-size: 14px;
+      display: inline-block;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #0b132b, #1c2541);
+      color: white;
+      text-align: center;
+      padding: 55px 20px;
+    }
+
+    .hero h2 {
+      font-size: 34px;
+      margin-bottom: 12px;
+    }
+
+    .hero p {
+      max-width: 720px;
+      margin: auto;
+      color: #dbeafe;
+      font-size: 16px;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 35px 18px;
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    section h2 {
+      font-size: 26px;
+      margin-bottom: 18px;
+      color: #0b132b;
+    }
+
+    .intro-box {
+      background: white;
+      padding: 23px;
+      border-radius: 12px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+      margin-bottom: 25px;
+    }
+
+    .terms {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+    }
+
+    .term {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.07);
+      border-left: 5px solid #3a506b;
+    }
+
+    .term h3 {
+      color: #0b132b;
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+
+    .term p {
+      font-size: 15px;
+    }
+
+    .letter {
+      background: #0b132b;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 8px;
+      display: inline-block;
+      margin-bottom: 18px;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    .highlight {
+      background: #e8f1ff;
+      padding: 22px;
+      border-radius: 12px;
+      margin-top: 20px;
+    }
+
+    .note {
+      background: #fff7e6;
+      border-left: 5px solid #d97706;
+      padding: 18px;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+
+    footer {
+      background: #0b132b;
+      color: #cbd5e1;
+      text-align: center;
+      padding: 25px 15px;
+      margin-top: 30px;
+    }
+
+    footer p {
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
+
+    @media (max-width: 600px) {
+
+      header h1 {
+        font-size: 24px;
+      }
+
+      .hero {
+        padding: 45px 16px;
+      }
+
+      .hero h2 {
+        font-size: 28px;
+      }
+
+      .container {
+        padding: 28px 15px;
+      }
+
+      section h2 {
+        font-size: 23px;
+      }
+
+      .terms {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>ChipDecoded</h1>
+    <p>Understanding Chip Technology, One Concept at a Time.</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="types-of-chips.html">Types of Chips</a>
+    <a href="chip-design.html">Chip Design</a>
+    <a href="vlsi.html">VLSI</a>
+    <a href="transistors.html">Transistors</a>
+    <a href="chip-manufacturing.html">Manufacturing</a>
+    <a href="ai-chips.html">AI Chips</a>
+    <a href="chiplets-packaging.html">Chiplets</a>
+    <a href="glossary.html">Glossary</a>
+  </nav>
+
+  <section class="hero">
+    <h2>Semiconductor Glossary</h2>
+
+    <p>
+      Simple explanations of important terms used in chip design,
+      semiconductors, VLSI and modern electronics.
+    </p>
+  </section>
+
+  <main class="container">
+
+    <section>
+      <div class="intro-box">
+
+        <h2>Why a Semiconductor Glossary?</h2>
+
+        <p>
+          Semiconductor technology contains many technical terms that can
+          be difficult for beginners to understand.
+        </p>
+
+        <p>
+          This glossary provides simple explanations of commonly used
+          terms related to chips, transistors, chip design, manufacturing
+          and packaging.
+        </p>
+
+      </div>
+    </section>
+
+    <section>
+      <div class="letter">A</div>
+
+      <div class="terms">
+
+        <div class="term">
+          <h3>ASIC</h3>
+          <p>
+            Application-Specific Integrated Circuit. A chip designed for a
+            particular application or purpose.
+          </p>
+        </div>
+
+        <div class="term">
+          <h3>AI Accelerator</h3>
+          <p>
+            Specialized hardware designed to speed up selected artificial
+            intelligence workloads.
+          </p>
+        </div>
+
+        <div class="term">
+          <h3>Analog Circuit</h3>
+          <p>
+            A circuit that processes continuously varying electrical
+            signals rather than only discrete digital states.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <section>
+      <div class="letter">C</div>
+
+      <div class="terms">
+
+        <div class="term">
+          <h3>CMOS</h3>
+          <p>
+            Complementary Metal-Oxide-Semiconductor. A widely used
+            technology for building digital integrated circuits.
+          </p>
+        </div>
+
+        <div class="term">
+          <h3>CPU</h3>
+          <p>
+            Central Processing Unit. A general-purpose processor that
+            executes instructions and performs many types of computing
+            tasks.
+          </p>
+        </div>
+
+        <div class="term">
+          <h3>Chiplet</h3>
+          <p>
+            A smaller semiconductor die designed to work as part of a
+            larger multi-die system.
+          </p>
+        </div>
+
+        <div class="term">
+          <h3>Cleanroom</h3>
+          <p>
+            A controlled manufacturing environment designed to reduce
+            contamination during semiconductor processing.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <section>
+      <div class="letter">D</div>
+
+      <div class="terms">
+
+        <div class="term">
+          <h3>Deposition</h3>
+          <p>
+            A manufacturing process used to form a thin layer of material
+            on a wafer.
+          </p>
+        </div>
+
+        <div class="term">
+          <h3>Die</h3>
+          <p>
+            A small piece of semiconductor material containing an
+            integrated circuit.
+          </p>
+        </div>
+
+        <div class="term">
+          <h3>Doping</h3>
+          <p>
+            The controlled introduction of impurities into semiconductor
+            material to modify its electrical properties.
+          </p>
+        </div>
+
+        <div class="term">
+          <h3>DSP</h3>
+          <p>
+            Digital Signal Processor. A processor designed to efficiently
+            handle many types of digital signal processing operations.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <section>
+      <div class="letter">F</div>
+
+      <div class="terms">
+
+        <div class="term">
+          <h3>Fab</h3>
+          <p>
+            Short for fabrication facility, a specialized factory where
+            semiconductor wafers are processed.
+          </p>
+        </div>
+
+        <div class="term">
+          <h3>FinFET</h3>
+          <p>
+            A transistor structure in which the channel forms a raised
+            fin, allowing the gate to control the channel from multiple
+            sides.
+          </p>
+        </div>
+
+        <div class="term">
+          <h3>FPGA</h3>
+          <p>
+            Field-Programmable Gate Array. A programmable semiconductor
+            device whose hardware logic can be configured after
+            manufacturing.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <section>
+      <div class="letter">G</div>
+
+      <div class="terms">
+
+        <div class="term">
+          <h3>GPU</h3>
+          <p>
+            Graphics Processing Unit. A processor designed for highly
+            parallel computation and commonly used for graphics and AI
+            workloads.
+          </p>
+        </div>
+
+        <div class="term">
+          <h3>GAA</h3>
+          <p>
+            Gate-All-Around. A transistor structure in which the gate
+            surrounds the channel, providing strong electrostatic control.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <section>
+      <div class="letter">I</div>
+
+      <div class="terms">
+
+        <div class="term">
+          <h3>Integrated Circuit</h3>
+          <p>
+            An electronic circuit containing multiple components formed
+            together on a semiconductor die.
+          </p>
+        </div>
+
+        <div class="term">
+          <h3>Interconnect</h3>
+          <p>
+            A conductive connection used to carry electrical signals
+            between components or circuit blocks.
+          </p>
+        </div>
+
+        <div class="term">
+          <h3>Ion Implantation</h3>
+          <p>
+            A semiconductor manufacturing technique used to introduce
+            selected ions into a material to modify its properties.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <section>
+      <div class="letter">L</div>
+
+      <div class="terms">
+
+        <div class="term">
+          <h3>Lithography</h3>
+          <p>
+            A patterning process used to define selected features on a
+            semiconductor wafer.
+          </p>
+        </div>
+
+        <div class="term">
+          <h3>Logic Gate</h3>
+          <p>
+            A digital circuit element that performs a logical operation
+            such as AND, OR or NOT.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <section>
+      <div class="letter">M</div>
+
+      <div class="terms">
+
+        <div class="term">
+          <h3>Microcontroller</h3>
+          <p>
+            A compact integrated circuit containing a processor, memory
+            and peripherals for controlling electronic systems.
+          </p>
+        </div>
+
+        <div class="term">
+          <h3>Memory</h3>
+          <p>
+            Semiconductor hardware used to store data or instructions.
+          </p>
+        </div>
+
+        <div class="term">
+          <h3>MOSFET</h3>
+          <p>
+            Metal-Oxide-Semiconductor Field-Effect Transistor. A widely
+            used transistor type in integrated circuits.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <section>
+      <div class="letter">N</div>
+
+      <div class="terms">
+
+        <div class="term">
+          <h3>NPU</h3>
+          <p>
+            Neural Processing Unit. Specialized hardware designed to
+            accelerate certain neural-network operations.
+          </p>
+        </div>
+
+        <div class="term">
+          <h3>Node</h3>
+          <p>
+            A term used to describe a semiconductor manufacturing
+            technology generation. Node names do not directly represent
+            one single physical dimension of a chip.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <section>
+      <div class="letter">P</div>
+
+      <div class="terms">
+
+        <div class="term">
+          <h3>Photolithography</h3>
+          <p>
+            A process that uses light and photoresist to transfer patterns
+            onto a semiconductor wafer.
+          </p>
+        </div>
+
+        <div class="term">
+          <h3>Physical Design</h3>
+          <p>
+            The stage of chip design where circuit structures are placed
+            and connected physically before manufacturing.
+          </p>
+        </div>
+
+        <div class="term">
+          <h3>Photoresist</h3>
+          <p>
+            A light-sensitive material used during semiconductor patterning
+            processes.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <section>
+      <div class="letter">R</div>
+
+      <div class="terms">
+
+        <div class="term">
+          <h3>RTL</h3>
+          <p>
+            Register Transfer Level. A way of describing digital hardware
+            behavior and data movement between registers.
+          </p>
+        </div>
+
+        <div class="term">
+          <h3>Routing</h3>
+          <p>
+            The process of creating physical connections between placed
+            circuit elements during chip physical design.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <section>
+      <div class="letter">S</div>
+
+      <div class="terms">
+
+        <div class="term">
+          <h3>SoC</h3>
+          <p>
+            System on Chip. An integrated circuit that combines multiple
+            system functions on one semiconductor platform.
+          </p>
+        </div>
+
+        <div class="term">
+          <h3>Synthesis</h3>
+          <p>
+            A design process that converts an RTL description into a
+            hardware representation suitable for implementation.
+          </p>
+        </div>
+
+        <div class="term">
+          <h3>Semiconductor</h3>
+          <p>
+            A material whose electrical properties can be controlled and
+            modified, making it useful for electronic devices.
+          </p>
+        </div>
+
+        <div class="term">
+          <h3>Silicon Wafer</h3>
+          <p>
+            A thin, flat piece of semiconductor material used as a
+            foundation for manufacturing integrated circuits.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <section>
+      <div class="letter">T</div>
+
+      <div class="terms">
+
+        <div class="term">
+          <h3>Transistor</h3>
+          <p>
+            A semiconductor device that can control electrical current
+            and is a fundamental building block of modern electronic
+            circuits.
+          </p>
+        </div>
+
+        <div class="term">
+          <h3>TSMC</h3>
+          <p>
+            Taiwan Semiconductor Manufacturing Company, a major
+            semiconductor foundry that manufactures chips designed by
+            other companies.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <section>
+      <div class="letter">V</div>
+
+      <div class="terms">
+
+        <div class="term">
+          <h3>VLSI</h3>
+          <p>
+            Very Large-Scale Integration. The integration of a very large
+            number of electronic components into an integrated circuit.
+          </p>
+        </div>
+
+        <div class="term">
+          <h3>Verification</h3>
+          <p>
+            The process of checking whether a chip design behaves according
+            to its intended specifications.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <section>
+      <div class="letter">W</div>
+
+      <div class="terms">
+
+        <div class="term">
+          <h3>Wafer</h3>
+          <p>
+            A thin semiconductor disk on which many integrated circuits
+            can be manufactured.
+          </p>
+        </div>
+
+        <div class="term">
+          <h3>Wafer Testing</h3>
+          <p>
+            Electrical testing performed on individual die locations while
+            they are still part of the wafer.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <section>
+      <h2>Quick Concept Map</h2>
+
+      <div class="highlight">
+
+        <p>
+          <strong>Transistor</strong> → building block of digital circuits
+        </p>
+
+        <p>
+          <strong>Logic Gates</strong> → built using transistors
+        </p>
+
+        <p>
+          <strong>Digital Circuits</strong> → combined to create larger
+          hardware blocks
+        </p>
+
+        <p>
+          <strong>VLSI</strong> → integrates very large numbers of
+          components
+        </p>
+
+        <p>
+          <strong>Chip</strong> → complete integrated circuit used in an
+          electronic system
+        </p>
+
+      </div>
+    </section>
+
+    <section>
+      <div class="note">
+
+        <strong>Note:</strong>
+
+        <p>
+          Semiconductor terminology can have more detailed definitions
+          depending on the context. The explanations on this page are
+          simplified for learning and quick reference.
+        </p>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p><strong>ChipDecoded</strong></p>
+    <p>Understanding Chip Technology, One Concept at a Time.</p>
+    <p>© 2026 ChipDecoded. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
