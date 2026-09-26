@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Types of Chips | ChipDecoded</title>
+
+  <meta name="description"
+        content="Learn about different types of semiconductor chips including CPUs, GPUs, microcontrollers, FPGAs, ASICs, memory chips, SoCs and AI accelerators.">
+
+  <meta name="author" content="ChipDecoded">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.7;
+      background: #f5f7fb;
+      color: #172033;
+    }
+
+    header {
+      background: #101828;
+      color: white;
+      padding: 18px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: bold;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 15px;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .hero {
+      background: white;
+      text-align: center;
+      padding: 55px 6%;
+    }
+
+    .hero h1 {
+      font-size: 38px;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      max-width: 750px;
+      margin: auto;
+      color: #475467;
+      font-size: 17px;
+    }
+
+    .section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 45px 6%;
+    }
+
+    .section h2 {
+      font-size: 28px;
+      margin-bottom: 18px;
+    }
+
+    .section p {
+      color: #475467;
+      margin-bottom: 15px;
+    }
+
+    .chip-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 20px;
+      margin-top: 25px;
+    }
+
+    .chip-card {
+      background: white;
+      padding: 24px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+    }
+
+    .chip-icon {
+      width: 55px;
+      height: 55px;
+      background: #101828;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .chip-card h3 {
+      margin-bottom: 9px;
+    }
+
+    .chip-card p {
+      font-size: 15px;
+      margin-bottom: 0;
+    }
+
+    .note {
+      background: #eef2f7;
+      padding: 20px;
+      border-left: 4px solid #101828;
+      margin-top: 25px;
+      border-radius: 5px;
+    }
+
+    .footer {
+      background: #080d17;
+      color: #b8c0cc;
+      text-align: center;
+      padding: 25px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        justify-content: center;
+        gap: 12px;
+      }
+
+      nav {
+        text-align: center;
+      }
+
+      nav a {
+        margin: 0 6px;
+      }
+
+      .hero h1 {
+        font-size: 31px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+
+  <div class="logo">ChipDecoded</div>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="types-of-chips.html">Chips</a>
+    <a href="chip-design.html">Design</a>
+    <a href="vlsi.html">VLSI</a>
+  </nav>
+
+</header>
+
+
+<main>
+
+  <section class="hero">
+
+    <h1>Types of Chips</h1>
+
+    <p>
+      Modern electronic devices use many different kinds of
+      semiconductor chips. Each type is designed to perform
+      particular tasks such as computation, memory, communication,
+      control or signal processing.
+    </p>
+
+  </section>
+
+
+  <section class="section">
+
+    <h2>What Is a Chip?</h2>
+
+    <p>
+      A semiconductor chip, also called an integrated circuit (IC),
+      is a small piece of semiconductor material that contains
+      electronic components and their connections.
+    </p>
+
+    <p>
+      Depending on its design, a chip can perform calculations,
+      store information, control electronic systems, process
+      signals or communicate with other devices.
+    </p>
+
+  </section>
+
+
+  <section class="section">
+
+    <h2>Major Types of Chips</h2>
+
+    <div class="chip-grid">
+
+
+      <div class="chip-card">
+
+        <div class="chip-icon">CPU</div>
+
+        <h3>CPU</h3>
+
+        <p>
+          A Central Processing Unit executes instructions and
+          performs general-purpose computing tasks. CPUs are
+          commonly used in computers, servers and many other
+          electronic systems.
+        </p>
+
+      </div>
+
+
+      <div class="chip-card">
+
+        <div class="chip-icon">GPU</div>
+
+        <h3>GPU</h3>
+
+        <p>
+          A Graphics Processing Unit is designed to perform many
+          calculations in parallel. GPUs are widely used for
+          graphics, scientific computing and machine learning.
+        </p>
+
+      </div>
+
+
+      <div class="chip-card">
+
+        <div class="chip-icon">MCU</div>
+
+        <h3>Microcontroller</h3>
+
+        <p>
+          A microcontroller combines a processor, memory and
+          peripheral interfaces on one chip. It is commonly used
+          in embedded systems and control applications.
+        </p>
+
+      </div>
+
+
+      <div class="chip-card">
+
+        <div class="chip-icon">FPGA</div>
+
+        <h3>FPGA</h3>
+
+        <p>
+          A Field-Programmable Gate Array contains configurable
+          logic resources that can be programmed for different
+          digital hardware applications.
+        </p>
+
+      </div>
+
+
+      <div class="chip-card">
+
+        <div class="chip-icon">ASIC</div>
+
+        <
