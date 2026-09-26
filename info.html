@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Info & Policies | ChipDecoded</title>
+
+    <meta name="description" content="About ChipDecoded, contact information, privacy policy and disclaimer.">
+    <meta name="keywords" content="ChipDecoded, About, Contact, Privacy Policy, Disclaimer, Semiconductor">
+    <meta name="author" content="ChipDecoded">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.7;
+            background: #f4f7fb;
+            color: #222;
+        }
+
+        header {
+            background: #0b1f3a;
+            color: white;
+            padding: 22px 15px;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 30px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .tagline {
+            font-size: 14px;
+            color: #dbe7f5;
+        }
+
+        nav {
+            margin-top: 18px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 7px;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 0 15px;
+        }
+
+        .hero {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 25px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+        }
+
+        .hero h1 {
+            color: #0b1f3a;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            color: #555;
+        }
+
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        .buttons button {
+            background: #0b1f3a;
+            color: white;
+            border: none;
+            padding: 12px 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        .buttons button:hover {
+            background: #173b68;
+        }
+
+        .section {
+            display: none;
+            background: white;
+            padding: 25px 20px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        .section h2 {
+            color: #0b1f3a;
+            margin-bottom: 15px;
+        }
+
+        .section h3 {
+            color: #173b68;
+            margin-top: 20px;
+            margin-bottom: 8px;
+        }
+
+        .section p {
+            margin-bottom: 12px;
+        }
+
+        .section ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .email-box {
+            background: #eef4fb;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            word-break: break-word;
+        }
+
+        footer {
+            background: #0b1f3a;
+            color: white;
+            text-align: center;
+            padding: 25px 15px;
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            .logo {
+                font-size: 26px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 5px;
+            }
+
+            .buttons button {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .section {
+                padding: 20px 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">ChipDecoded</div>
+    <div class="tagline">
+        Understanding Chip Technology, One Concept at a Time.
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="types-of-chips.html">Types of Chips</a>
+        <a href="chip-design.html">Chip Design</a>
+        <a href="vlsi.html">VLSI</a>
+        <a href="transistors.html">Transistors</a>
+        <a href="chip-manufacturing.html">Manufacturing</a>
+        <a href="ai-chips.html">AI Chips</a>
+        <a href="chiplets-packaging.html">Chiplets</a>
+        <a href="glossary.html">Glossary</a>
+        <a href="careers.html">Careers</a>
+        <a href="info.html">Info</a>
+    </nav>
+</header>
+
+
+<div class="container">
+
+    <div class="hero">
+        <h1>ChipDecoded Information</h1>
+        <p>
+            Learn more about ChipDecoded, contact us, and read our privacy
+            and disclaimer information.
+        </p>
+    </div>
+
+
+    <div class="buttons">
+        <button onclick="showSection('about')">About</button>
+        <button onclick="showSection('contact')">Contact</button>
+        <button onclick="showSection('privacy')">Privacy Policy</button>
+        <button onclick="showSection('disclaimer')">Disclaimer</button>
+    </div>
+
+
+    <!-- ABOUT -->
+
+    <section id="about" class="section active">
+
+        <h2>About ChipDecoded</h2>
+
+        <p>
+            ChipDecoded is an educational website created to explain
+            semiconductor and chip technology in a simple and understandable
+            way.
+        </p>
+
+        <h3>What You Can Learn</h3>
+
+        <ul>
+            <li>Types of Chips</li>
+            <li>Chip Design</li>
+            <li>VLSI</li>
+            <li>Transistors and Technology</li>
+            <li>Chip Manufacturing</li>
+            <li>AI Chips</li>
+            <li>Chiplets and Advanced Packaging</li>
+            <li>Semiconductor Glossary</li>
+            <li>Careers in Chip Design and Semiconductors</li>
+        </ul>
+
+        <h3>Our Learning Approach</h3>
+
+        <p>
+            Complex semiconductor concepts are explained using simple
+            language, structured sections, examples and basic visual
+            explanations.
+        </p>
+
+        <h3>Who Is ChipDecoded For?</h3>
+
+        <p>
+            ChipDecoded is useful for students, beginners, electronics
+            enthusiasts and anyone interested in learning about modern
+            semiconductor technology.
+        </p>
+
+        <h3>Why Semiconductor Technology Matters</h3>
+
+        <p>
+            Semiconductors are an important part of computers, smartphones,
+            automobiles, communication systems, artificial intelligence and
+            many other modern technologies.
+        </p>
+
+        <h3>Our Goal</h3>
+
+        <p>
+            The goal of ChipDecoded is to make chip and semiconductor
+            concepts easier to understand and explore.
+        </p>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section id="contact" class="section">
+
+        <h2>Contact ChipDecoded</h2>
+
+        <p>
+            If you have a question, suggestion, correction or feedback
+            related to ChipDecoded, you can contact us through email.
+        </p>
+
+        <h3>Contact Email</h3>
+
+        <div class="email-box">
+            your-email@example.com
+        </div>
+
+        <p>
+            <strong>Important:</strong> Replace the email address above with
+            your actual email address before publishing the website.
+        </p>
+
+        <h3>You Can Contact Us About</h3>
+
+        <ul>
+            <li>Questions about website content</li>
+            <li>Suggestions for new topics</li>
+            <li>Content corrections</li>
+            <li>General feedback</li>
+            <li>Technical issues related to the website</li>
+        </ul>
+
+        <p>
+            We appreciate useful feedback that can help improve the
+            educational content on ChipDecoded.
+        </p>
+
+    </section>
+
+
+    <!-- PRIVACY POLICY -->
+
+    <section id="privacy" class="section">
+
+        <h2>Privacy Policy</h2>
+
+        <p>
+            This Privacy Policy explains how ChipDecoded may handle
+            information when visitors use this website.
+        </p>
+
+        <h3>Information We May Collect</h3>
+
+        <p>
+            ChipDecoded does not intentionally collect personal information
+            unless visitors voluntarily provide it, for example by contacting
+            us through email.
+        </p>
+
+        <h3>How Information May Be Used</h3>
+
+        <p>
+            Information voluntarily provided by visitors may be used to
+            respond to questions, feedback or requests.
+        </p>
+
+        <h3>Cookies</h3>
+
+        <p>
+            ChipDecoded may use cookies or similar technologies in the future
+            for website functionality, analytics or advertising purposes.
+        </p>
+
+        <h3>Advertising</h3>
+
+        <p>
+            If advertisements are displayed on ChipDecoded, third-party
+            advertising services may use cookies or similar technologies
+            according to their own policies.
+        </p>
+
+        <h3>Third-Party Services</h3>
+
+        <p>
+            The website may use third-party services such as analytics,
+            advertising or other website tools. These services may have
+            their own privacy policies.
+        </p>
+
+        <h3>External Links</h3>
+
+        <p>
+            ChipDecoded may contain links to external websites. We are not
+            responsible for the privacy practices or content of external
+            websites.
+        </p>
+
+        <h3>Children's Privacy</h3>
+
+        <p>
+            ChipDecoded is an educational website. We do not intentionally
+            request unnecessary personal information from children.
+        </p>
+
+        <h3>Data Security</h3>
+
+        <p>
+            Reasonable steps may be taken to protect information voluntarily
+            provided to us. However, no internet transmission can be
+            guaranteed to be completely secure.
+        </p>
+
+        <h3>Changes to This Policy</h3>
+
+        <p>
+            This Privacy Policy may be updated when website features,
+            services or practices change.
+        </p>
+
+        <h3>Contact</h3>
+
+        <p>
+            For privacy-related questions, please contact us using the
+            contact information provided in the Contact section.
+        </p>
+
+        <p>
+            <strong>Last updated:</strong> September 2026
+        </p>
+
+    </section>
+
+
+    <!-- DISCLAIMER -->
+
+    <section id="disclaimer" class="section">
+
+        <h2>Disclaimer</h2>
+
+        <h3>General Information</h3>
+
+        <p>
+            The information provided on ChipDecoded is intended for general
+            educational and informational purposes.
+        </p>
+
+        <h3>Educational Content</h3>
+
+        <p>
+            ChipDecoded explains semiconductor and chip-related concepts in
+            a simplified manner. Some technical topics may be simplified to
+            make them easier for beginners to understand.
+        </p>
+
+        <h3>Accuracy</h3>
+
+        <p>
+            We aim to provide useful and accurate information, but we do not
+            guarantee that every piece of information will always be complete,
+            current or error-free.
+        </p>
+
+        <h3>No Professional Advice</h3>
+
+        <p>
+            Content on ChipDecoded should not be considered professional,
+            engineering, financial, legal or other specialized advice.
+        </p>
+
+        <h3>External Links</h3>
+
+        <p>
+            ChipDecoded may provide links to external websites for additional
+            information. We do not control or guarantee the content,
+            availability or policies of external websites.
+        </p>
+
+        <h3>Advertisements</h3>
+
+        <p>
+            ChipDecoded may display advertisements in the future. Advertising
+            content is provided by third-party advertising services and does
+            not necessarily represent an endorsement by ChipDecoded.
+        </p>
+
+        <h3>Affiliate Links</h3>
+
+        <p>
+            If affiliate links are used in the future, ChipDecoded may receive
+            a commission when a visitor makes a qualifying purchase through
+            such links, without additional cost to the visitor.
+        </p>
+
+        <h3>No Guarantee of Results</h3>
+
+        <p>
+            Educational information on this website does not guarantee any
+            specific academic, career or professional result.
+        </p>
+
+        <h3>Intellectual Property</h3>
+
+        <p>
+            Website content, design and original materials created for
+            ChipDecoded are intended for use on this website unless otherwise
+            stated.
+        </p>
+
+        <h3>Changes</h3>
+
+        <p>
+            ChipDecoded may update, modify or remove content at any time
+            without prior notice.
+        </p>
+
+        <h3>Acceptance</h3>
+
+        <p>
+            By using ChipDecoded, you acknowledge that you have read and
+            understood this disclaimer.
+        </p>
+
+        <p>
+            <strong>Last updated:</strong> September 2026
+        </p>
+
+    </section>
+
+</div>
+
+
+<footer>
+
+    <p>
+        © 2026 ChipDecoded. All rights reserved.
+    </p>
+
+    <p>
+        <a href="index.html">Home</a> |
+        <a href="info.html">Info & Policies</a>
+    </p>
+
+</footer>
+
+
+<script>
+
+    function showSection(sectionId) {
+
+        const sections = document.querySelectorAll(".section");
+
+        sections.forEach(function(section) {
+            section.classList.remove("active");
+        });
+
+        document.getElementById(sectionId).classList.add("active");
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    }
+
+</script>
+
+</body>
+</html>
