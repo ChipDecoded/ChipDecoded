@@ -1,434 +1,1108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Types of Chips | ChipDecoded</title>
+<title>Types of Chips | ChipDecoded</title>
 
-  <meta name="description"
-        content="Learn about different types of semiconductor chips including CPUs, GPUs, microcontrollers, FPGAs, ASICs, memory chips, SoCs and AI accelerators.">
+<meta name="description" content="Explore different types of semiconductor chips including CPU, GPU, MCU, FPGA, ASIC, SoC, memory and AI accelerators.">
 
-  <meta name="author" content="ChipDecoded">
+<style>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f4f7fb;
+    color:#172033;
+    line-height:1.6;
+}
+
+/* HEADER */
+
+header{
+    background:#06182f;
+    color:white;
+    padding:16px 5%;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 4px 18px rgba(0,0,0,.18);
+}
+
+.nav{
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.logo{
+    font-size:27px;
+    font-weight:bold;
+}
+
+.logo span{
+    color:#4dd9ff;
+}
+
+.tagline{
+    font-size:10px;
+    color:#b9c9dc;
+}
+
+nav{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:flex-end;
+    gap:12px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-size:12px;
+}
+
+nav a:hover{
+    color:#4dd9ff;
+}
+
+/* HERO */
+
+.hero{
+    background:
+    radial-gradient(circle at 80% 20%,rgba(77,217,255,.18),transparent 30%),
+    linear-gradient(135deg,#06182f,#0c3158);
+    color:white;
+    padding:75px 6%;
+}
+
+.hero-inner{
+    max-width:1150px;
+    margin:auto;
+    text-align:center;
+}
+
+.badge{
+    display:inline-block;
+    padding:7px 14px;
+    border:1px solid #4dd9ff;
+    border-radius:20px;
+    color:#4dd9ff;
+    font-size:12px;
+    margin-bottom:18px;
+}
+
+.hero h1{
+    font-size:clamp(40px,6vw,65px);
+    line-height:1.1;
+    margin-bottom:18px;
+}
+
+.hero h1 span{
+    color:#4dd9ff;
+}
+
+.hero p{
+    max-width:700px;
+    margin:auto;
+    color:#c8d8e8;
+    font-size:17px;
+}
+
+/* INTRO */
+
+section{
+    padding:70px 6%;
+}
+
+.container{
+    max-width:1150px;
+    margin:auto;
+}
+
+.heading{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.heading h2{
+    font-size:33px;
+    color:#06182f;
+    margin-bottom:8px;
+}
+
+.heading p{
+    color:#66768a;
+}
+
+/* CHIP MAP */
+
+.map-section{
+    background:white;
+}
+
+.chip-map{
+    max-width:650px;
+    height:300px;
+    margin:auto;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.core{
+    width:150px;
+    height:150px;
+    background:#06182f;
+    border:3px solid #4dd9ff;
+    border-radius:20px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#4dd9ff;
+    font-size:22px;
+    font-weight:bold;
+    box-shadow:0 0 30px rgba(77,217,255,.25);
+    z-index:2;
+}
+
+.map-item{
+    position:absolute;
+    padding:10px 15px;
+    background:#eef7fb;
+    border:1px solid #cfe5ee;
+    border-radius:10px;
+    font-weight:bold;
+    color:#087aa4;
+    font-size:13px;
+}
+
+.cpu{top:5px;left:50%;transform:translateX(-50%)}
+.gpu{right:5px;top:50%;transform:translateY(-50%)}
+.memory{bottom:5px;left:50%;transform:translateX(-50%)}
+.ai{left:5px;top:50%;transform:translateY(-50%)}
+
+/* CHIP CARDS */
+
+.chips{
+    background:#f4f7fb;
+}
+
+.chip-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.card{
+    background:white;
+    border-radius:17px;
+    padding:25px;
+    border:1px solid #dfe7ef;
+    box-shadow:0 5px 18px rgba(15,40,70,.06);
+    transition:.3s;
+    position:relative;
+    overflow:hidden;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 14px 30px rgba(15,40,70,.13);
+}
+
+.card::after{
+    content:"";
+    position:absolute;
+    bottom:0;
+    left:0;
+    right:0;
+    height:4px;
+    background:#4dd9ff;
+    transform:scaleX(0);
+    transition:.3s;
+}
+
+.card:hover::after{
+    transform:scaleX(1);
+}
+
+.card-icon{
+    font-size:38px;
+    margin-bottom:10px;
+}
+
+.card h3{
+    color:#06182f;
+    margin-bottom:7px;
+}
+
+.card p{
+    font-size:14px;
+    color:#68788c;
+    margin-bottom:15px;
+}
+
+.use{
+    display:inline-block;
+    padding:5px 10px;
+    border-radius:20px;
+    background:#e9f7fb;
+    color:#087aa4;
+    font-size:11px;
+    font-weight:bold;
+}
+
+/* COMPARISON */
+
+.compare{
+    background:white;
+}
+
+.table-wrap{
+    overflow-x:auto;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    min-width:650px;
+}
+
+th,td{
+    padding:14px;
+    border:1px solid #dbe5ee;
+    text-align:center;
+    font-size:14px;
+}
+
+th{
+    background:#06182f;
+    color:white;
+}
+
+tr:nth-child(even){
+    background:#f5f8fb;
+}
+
+/* CHOOSE */
+
+.choose{
+    background:#eef5fb;
+}
+
+.choose-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.choose-card{
+    background:white;
+    border-radius:15px;
+    padding:23px;
+    text-align:center;
+    border:1px solid #dce7ef;
+}
+
+.choose-card .symbol{
+    font-size:35px;
+    margin-bottom:8px;
+}
+
+.choose-card h3{
+    color:#06182f;
+    margin-bottom:7px;
+}
+
+.choose-card p{
+    color:#66758a;
+    font-size:13px;
+}
+
+/* QUIZ */
+
+.quiz{
+    background:#06182f;
+    color:white;
+}
+
+.quiz .heading h2{
+    color:white;
+}
+
+.quiz .heading p{
+    color:#b9c9dc;
+}
+
+.quiz-box{
+    max-width:750px;
+    margin:auto;
+    background:#102b4b;
+    border:1px solid #315577;
+    border-radius:18px;
+    padding:30px;
+    text-align:center;
+}
+
+.quiz-box h3{
+    margin-bottom:20px;
+}
+
+.options{
+    display:grid;
+    gap:10px;
+}
+
+.options button{
+    padding:13px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    background:#f7fafc;
+    color:#172033;
+    font-size:14px;
+}
+
+.options button:hover{
+    background:#4dd9ff;
+}
+
+#result{
+    margin-top:18px;
+    min-height:25px;
+    font-weight:bold;
+}
+
+/* FACT */
+
+.fact{
+    background:#eaf8fc;
+}
+
+.fact-box{
+    max-width:800px;
+    margin:auto;
+    background:white;
+    border-radius:18px;
+    padding:30px;
+    text-align:center;
+    border:1px solid #cfe8f0;
+}
+
+.fact-box strong{
+    display:block;
+    font-size:42px;
+    margin-bottom:8px;
+}
+
+.fact-box h3{
+    color:#06182f;
+    margin-bottom:8px;
+}
+
+.fact-box p{
+    color:#66758a;
+}
+
+/* FOOTER */
+
+footer{
+    background:#031123;
+    color:#aebed0;
+    text-align:center;
+    padding:30px 15px;
+}
+
+footer p{
+    font-size:13px;
+    margin:6px;
+}
+
+footer a{
+    color:#4dd9ff;
+    text-decoration:none;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+    .nav{
+        flex-direction:column;
     }
 
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.7;
-      background: #f5f7fb;
-      color: #172033;
+    nav{
+        justify-content:center;
     }
 
-    header {
-      background: #101828;
-      color: white;
-      padding: 18px 6%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
+    .chip-grid{
+        grid-template-columns:repeat(2,1fr);
     }
 
-    .logo {
-      font-size: 25px;
-      font-weight: bold;
+    .choose-grid{
+        grid-template-columns:repeat(2,1fr);
     }
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin-left: 15px;
-      font-size: 14px;
+}
+
+@media(max-width:600px){
+
+    header{
+        position:relative;
     }
 
-    nav a:hover {
-      text-decoration: underline;
+    section{
+        padding:55px 20px;
     }
 
-    .hero {
-      background: white;
-      text-align: center;
-      padding: 55px 6%;
+    .hero{
+        padding:55px 20px;
     }
 
-    .hero h1 {
-      font-size: 38px;
-      margin-bottom: 15px;
+    .hero h1{
+        font-size:43px;
     }
 
-    .hero p {
-      max-width: 750px;
-      margin: auto;
-      color: #475467;
-      font-size: 17px;
+    .hero p{
+        font-size:15px;
     }
 
-    .section {
-      max-width: 1100px;
-      margin: auto;
-      padding: 45px 6%;
+    .heading h2{
+        font-size:28px;
     }
 
-    .section h2 {
-      font-size: 28px;
-      margin-bottom: 18px;
+    .chip-grid{
+        grid-template-columns:1fr;
     }
 
-    .section p {
-      color: #475467;
-      margin-bottom: 15px;
+    .choose-grid{
+        grid-template-columns:1fr;
     }
 
-    .chip-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 20px;
-      margin-top: 25px;
+    .chip-map{
+        height:350px;
     }
 
-    .chip-card {
-      background: white;
-      padding: 24px;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+    .core{
+        width:125px;
+        height:125px;
     }
 
-    .chip-icon {
-      width: 55px;
-      height: 55px;
-      background: #101828;
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 10px;
-      font-weight: bold;
-      margin-bottom: 15px;
+    .cpu{
+        top:10px;
     }
 
-    .chip-card h3 {
-      margin-bottom: 9px;
+    .memory{
+        bottom:10px;
     }
 
-    .chip-card p {
-      font-size: 15px;
-      margin-bottom: 0;
+    .gpu{
+        right:0;
     }
 
-    .note {
-      background: #eef2f7;
-      padding: 20px;
-      border-left: 4px solid #101828;
-      margin-top: 25px;
-      border-radius: 5px;
+    .ai{
+        left:0;
     }
 
-    .footer {
-      background: #080d17;
-      color: #b8c0cc;
-      text-align: center;
-      padding: 25px;
-      font-size: 14px;
-    }
+}
 
-    @media (max-width: 600px) {
-      header {
-        justify-content: center;
-        gap: 12px;
-      }
-
-      nav {
-        text-align: center;
-      }
-
-      nav a {
-        margin: 0 6px;
-      }
-
-      .hero h1 {
-        font-size: 31px;
-      }
-    }
-  </style>
+</style>
 </head>
 
 <body>
 
+
+<!-- HEADER -->
+
 <header>
 
-  <div class="logo">ChipDecoded</div>
+<div class="nav">
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="types-of-chips.html">Chips</a>
-    <a href="chip-design.html">Design</a>
-    <a href="vlsi.html">VLSI</a>
-  </nav>
+<div>
+
+<div class="logo">
+Chip<span>Decoded</span>
+</div>
+
+<div class="tagline">
+Understanding Chip Technology, One Concept at a Time.
+</div>
+
+</div>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="types-of-chips.html">Chips</a>
+<a href="chip-design.html">Design</a>
+<a href="vlsi.html">VLSI</a>
+<a href="transistors.html">Transistors</a>
+<a href="chip-manufacturing.html">Manufacturing</a>
+<a href="ai-chips.html">AI Chips</a>
+<a href="chiplets-packaging.html">Chiplets</a>
+<a href="glossary.html">Glossary</a>
+<a href="careers.html">Careers</a>
+<a href="info.html">Info</a>
+</nav>
+
+</div>
 
 </header>
 
 
-<main>
+<!-- HERO -->
 
-  <section class="hero">
+<section class="hero">
 
-    <h1>Types of Chips</h1>
+<div class="hero-inner">
 
-    <p>
-      Modern electronic devices use many different kinds of
-      semiconductor chips. Each type is designed to perform
-      particular tasks such as computation, memory, communication,
-      control or signal processing.
-    </p>
+<div class="badge">
+SEMICONDUCTOR BASICS
+</div>
 
-  </section>
+<h1>
+Types of <span>Chips</span>
+</h1>
 
+<p>
+Not every chip performs the same job. Different chips are
+built with different architectures, processing capabilities
+and purposes. Let's decode the major types.
+</p>
 
-  <section class="section">
+</div>
 
-    <h2>What Is a Chip?</h2>
+</section>
 
-    <p>
-      A semiconductor chip, also called an integrated circuit (IC),
-      is a small piece of semiconductor material that contains
-      electronic components and their connections.
-    </p>
 
-    <p>
-      Depending on its design, a chip can perform calculations,
-      store information, control electronic systems, process
-      signals or communicate with other devices.
-    </p>
+<!-- CHIP MAP -->
 
-  </section>
+<section class="map-section">
 
+<div class="container">
 
-  <section class="section">
+<div class="heading">
 
-    <h2>Major Types of Chips</h2>
+<h2>🧩 One Chip World, Many Roles</h2>
 
-    <div class="chip-grid">
+<p>
+A modern electronic system can use several types of chips together.
+</p>
 
+</div>
 
-      <div class="chip-card">
+<div class="chip-map">
 
-        <div class="chip-icon">CPU</div>
+<div class="map-item cpu">CPU</div>
 
-        <h3>CPU</h3>
+<div class="map-item gpu">GPU</div>
 
-        <p>
-          A Central Processing Unit executes instructions and
-          performs general-purpose computing tasks. CPUs are
-          commonly used in computers, servers and many other
-          electronic systems.
-        </p>
+<div class="map-item memory">Memory</div>
 
-      </div>
+<div class="map-item ai">AI / NPU</div>
 
+<div class="core">
+CHIP
+</div>
 
-      <div class="chip-card">
+</div>
 
-        <div class="chip-icon">GPU</div>
+</div>
 
-        <h3>GPU</h3>
+</section>
 
-        <p>
-          A Graphics Processing Unit is designed to perform many
-          calculations in parallel. GPUs are widely used for
-          graphics, scientific computing and machine learning.
-        </p>
 
-      </div>
+<!-- CHIP TYPES -->
 
+<section class="chips">
 
-      <div class="chip-card">
+<div class="container">
 
-        <div class="chip-icon">MCU</div>
+<div class="heading">
 
-        <h3>Microcontroller</h3>
+<h2>🔍 Explore the Major Chip Types</h2>
 
-        <p>
-          A microcontroller combines a processor, memory and
-          peripheral interfaces on one chip. It is commonly used
-          in embedded systems and control applications.
-        </p>
+<p>
+Each category below has a different role in an electronic system.
+</p>
 
-      </div>
+</div>
 
 
-      <div class="chip-card">
+<div class="chip-grid">
 
-        <div class="chip-icon">FPGA</div>
 
-        <h3>FPGA</h3>
+<div class="card">
 
-        <p>
-          A Field-Programmable Gate Array contains configurable
-          logic resources that can be programmed for different
-          digital hardware applications.
-        </p>
+<div class="card-icon">🧠</div>
 
-      </div>
+<h3>CPU</h3>
 
+<p>
+The Central Processing Unit executes instructions and
+handles many general-purpose computing tasks.
+</p>
 
-      <div class="chip-card">
+<span class="use">Computers • Phones • Servers</span>
 
-        <div class="chip-icon">ASIC</div>
+</div>
 
-        <h3>ASIC</h3>
 
-        <p>
-          An Application-Specific Integrated Circuit is designed
-          for a particular application or set of functions.
-          Custom hardware can provide high efficiency for its
-          intended task.
-        </p>
+<div class="card">
 
-      </div>
+<div class="card-icon">🎮</div>
 
+<h3>GPU</h3>
 
-      <div class="chip-card">
+<p>
+A Graphics Processing Unit is designed to perform many
+similar operations in parallel.
+</p>
 
-        <div class="chip-icon">SoC</div>
+<span class="use">Graphics • AI • Computing</span>
 
-        <h3>SoC</h3>
+</div>
 
-        <p>
-          A System on Chip integrates multiple functional blocks
-          into a single semiconductor device. These blocks may
-          include processing cores, memory interfaces and
-          communication components.
-        </p>
 
-      </div>
+<div class="card">
 
+<div class="card-icon">⚙️</div>
 
-      <div class="chip-card">
+<h3>Microcontroller</h3>
 
-        <div class="chip-icon">MEM</div>
+<p>
+A microcontroller combines a processor, memory and
+peripherals on one integrated circuit for control tasks.
+</p>
 
-        <h3>Memory Chips</h3>
+<span class="use">IoT • Appliances • Embedded Systems</span>
 
-        <p>
-          Memory chips store digital information. Examples include
-          DRAM, SRAM, NAND flash and other memory technologies,
-          each designed for different storage requirements.
-        </p>
+</div>
 
-      </div>
 
+<div class="card">
 
-      <div class="chip-card">
+<div class="card-icon">🔲</div>
 
-        <div class="chip-icon">DSP</div>
+<h3>FPGA</h3>
 
-        <h3>DSP</h3>
+<p>
+An FPGA contains configurable logic that can be programmed
+to implement different digital hardware functions.
+</p>
 
-        <p>
-          Digital Signal Processors are specialized for processing
-          numerical signals. They are used in areas such as audio,
-          communications and image processing.
-        </p>
+<span class="use">Prototyping • Control • Acceleration</span>
 
-      </div>
+</div>
 
 
-      <div class="chip-card">
+<div class="card">
 
-        <div class="chip-icon">AI</div>
+<div class="card-icon">🎯</div>
 
-        <h3>AI Accelerators</h3>
+<h3>ASIC</h3>
 
-        <p>
-          AI accelerators are specialized computing hardware
-          designed to efficiently perform operations used in
-          artificial intelligence and machine learning workloads.
-        </p>
+<p>
+An Application-Specific Integrated Circuit is designed
+for a particular application or set of functions.
+</p>
 
-      </div>
+<span class="use">Specialized Hardware</span>
 
+</div>
 
-      <div class="chip-card">
 
-        <div class="chip-icon">PMIC</div>
+<div class="card">
 
-        <h3>Power Management IC</h3>
+<div class="card-icon">📱</div>
 
-        <p>
-          Power management integrated circuits help control,
-          regulate and distribute electrical power within
-          electronic systems.
-        </p>
+<h3>SoC</h3>
 
-      </div>
+<p>
+A System-on-Chip integrates multiple system functions
+into a single semiconductor device.
+</p>
 
+<span class="use">Smartphones • Embedded Devices</span>
 
-    </div>
+</div>
 
-  </section>
 
+<div class="card">
 
-  <section class="section">
+<div class="card-icon">💾</div>
 
-    <h2>Why Are There So Many Types of Chips?</h2>
+<h3>Memory Chips</h3>
 
-    <p>
-      Different electronic systems have different requirements.
-      A smartphone, automobile, computer, camera and industrial
-      controller may need different combinations of processing,
-      memory, communication and power-management functions.
-    </p>
+<p>
+Memory devices store information used by electronic
+systems. Different memory technologies serve different needs.
+</p>
 
-    <p>
-      Chip designers therefore create architectures that are
-      optimized for particular workloads, performance targets,
-      power requirements, cost constraints and physical limitations.
-    </p>
+<span class="use">Data Storage • Computing</span>
 
-    <div class="note">
+</div>
 
-      <strong>Important:</strong>
 
-      <p>
-        These categories can overlap. For example, a modern SoC
-        may contain CPU cores, GPU resources, memory controllers,
-        communication interfaces and specialized accelerators
-        within the same package or chip.
-      </p>
+<div class="card">
 
-    </div>
+<div class="card-icon">🎵</div>
 
-  </section>
+<h3>DSP</h3>
 
+<p>
+Digital Signal Processors are optimized for processing
+digital signals such as audio, images or sensor data.
+</p>
 
-  <section class="section">
+<span class="use">Audio • Sensors • Communications</span>
 
-    <h2>What's Next?</h2>
+</div>
 
-    <p>
-      Understanding the different types of chips is the first step
-      toward learning chip architecture and chip design.
-      Next, we can explore how engineers design these chips,
-      from specifications and architecture to verification and
-      physical implementation.
-    </p>
 
-  </section>
+<div class="card">
 
-</main>
+<div class="card-icon">🤖</div>
 
+<h3>AI Accelerator</h3>
 
-<footer class="footer">
+<p>
+AI accelerators use specialized hardware structures
+to speed up selected machine-learning workloads.
+</p>
 
+<span class="use">AI • Vision • Neural Networks</span>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- COMPARISON -->
+
+<section class="compare">
+
+<div class="container">
+
+<div class="heading">
+
+<h2>⚡ Compare Common Chips</h2>
+
+<p>
+Their purposes can overlap, but their design priorities are different.
+</p>
+
+</div>
+
+<div class="table-wrap">
+
+<table>
+
+<tr>
+<th>Chip</th>
+<th>Main Purpose</th>
+<th>Typical Strength</th>
+<th>Example Area</th>
+</tr>
+
+<tr>
+<td>CPU</td>
+<td>General computing</td>
+<td>Flexibility</td>
+<td>PC / Phone</td>
+</tr>
+
+<tr>
+<td>GPU</td>
+<td>Parallel processing</td>
+<td>Many operations together</td>
+<td>Graphics / AI</td>
+</tr>
+
+<tr>
+<td>MCU</td>
+<td>Device control</td>
+<td>Integrated control system</td>
+<td>IoT / Appliances</td>
+</tr>
+
+<tr>
+<td>FPGA</td>
+<td>Configurable hardware</td>
+<td>Reconfigurability</td>
+<td>Prototyping</td>
+</tr>
+
+<tr>
+<td>ASIC</td>
+<td>Specific application</td>
+<td>Specialization</td>
+<td>Dedicated hardware</td>
+</tr>
+
+<tr>
+<td>NPU</td>
+<td>Neural workloads</td>
+<td>AI acceleration</td>
+<td>AI devices</td>
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- WHICH CHIP -->
+
+<section class="choose">
+
+<div class="container">
+
+<div class="heading">
+
+<h2>🤔 Which Chip Does What?</h2>
+
+<p>
+Think about the main task before choosing the type of hardware.
+</p>
+
+</div>
+
+<div class="choose-grid">
+
+<div class="choose-card">
+
+<div class="symbol">💻</div>
+
+<h3>Need Flexibility?</h3>
+
+<p>
+General-purpose computing often relies on CPUs because
+they can handle many different instructions and tasks.
+</p>
+
+</div>
+
+
+<div class="choose-card">
+
+<div class="symbol">🎮</div>
+
+<h3>Need Parallel Work?</h3>
+
+<p>
+GPUs are designed with large numbers of processing
+resources for parallel workloads.
+</p>
+
+</div>
+
+
+<div class="choose-card">
+
+<div class="symbol">🤖</div>
+
+<h3>Need AI Processing?</h3>
+
+<p>
+NPUs and other AI accelerators are designed to speed
+up selected machine-learning operations.
+</p>
+
+</div>
+
+
+<div class="choose-card">
+
+<div class="symbol">🔧</div>
+
+<h3>Need Custom Hardware?</h3>
+
+<p>
+FPGAs offer configurable hardware, while ASICs are
+created for specific applications.
+</p>
+
+</div>
+
+
+<div class="choose-card">
+
+<div class="symbol">📱</div>
+
+<h3>Need Many Functions?</h3>
+
+<p>
+An SoC can integrate several system functions into
+one semiconductor device.
+</p>
+
+</div>
+
+
+<div class="choose-card">
+
+<div class="symbol">💾</div>
+
+<h3>Need Data Storage?</h3>
+
+<p>
+Memory chips are designed to store information for
+electronic systems.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- QUIZ -->
+
+<section class="quiz">
+
+<div class="container">
+
+<div class="heading">
+
+<h2>🧠 Quick Chip Quiz</h2>
+
+<p>Let's see what you remember.</p>
+
+</div>
+
+<div class="quiz-box">
+
+<h3>
+Which chip is mainly designed for general-purpose computing?
+</h3>
+
+<div class="options">
+
+<button onclick="check(false)">
+A. GPU
+</button>
+
+<button onclick="check(true)">
+B. CPU
+</button>
+
+<button onclick="check(false)">
+C. NPU
+</button>
+
+<button onclick="check(false)">
+D. Memory Chip
+</button>
+
+</div>
+
+<div id="result"></div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FACT -->
+
+<section class="fact">
+
+<div class="container">
+
+<div class="heading">
+
+<h2>💡 Chip Fact</h2>
+
+</div>
+
+<div class="fact-box">
+
+<strong>🔍</strong>
+
+<h3>
+One electronic device can contain several chip types.
+</h3>
+
+<p>
+For example, a smartphone can combine processing,
+graphics, memory, connectivity and specialized hardware
+within its overall system.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<p>
+© 2026 ChipDecoded. All rights reserved.
+</p>
+
+<p>
+Understanding Chip Technology, One Concept at a Time.
+</p>
+
+<p>
 <a href="info.html">Info & Policies</a>
+</p>
 
 </footer>
+
+
+<script>
+
+function check(correct){
+
+const result=document.getElementById("result");
+
+if(correct){
+
+result.textContent="✓ Correct! CPUs are designed for a wide range of general-purpose computing tasks.";
+result.style.color="#4dd9ff";
+
+}else{
+
+result.textContent="✕ Try again! Think about the processor used for general-purpose computing.";
+result.style.color="#ffb4b4";
+
+}
+
+}
+
+</script>
 
 </body>
 </html>
